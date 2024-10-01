@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Related Opportunities" icon-name="standard:opportunity">
+        <div class="slds-m-around_medium">
+            <template if:true={opportunities.length}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={opportunities}
+                    columns={columns}
+                    onsave={handleSave}
+                    draft-values={draftValues}>
+                </lightning-datatable>
+            </template>
+            <template if:false={opportunities.length}>
+                <p>No related opportunities found.</p>
+            </template>
+        </div>
+        <div class="slds-text-align_right slds-m-right_small slds-m-bottom_x-small">
+            <span class="slds-text-body_small">Version 1.5</span>
+        </div>
+    </lightning-card>
+</template>
