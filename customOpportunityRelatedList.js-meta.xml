@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Custom Opportunity Related List</masterLabel>
+    <description>Custom related list for opportunities with customizable fields</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="customFields" type="String" label="Custom Fields" 
+                      description="Comma-separated list of Opportunity field API names to display (e.g., Name,StageName,Amount,CloseDate)" 
+                      default="Name,StageName,Amount,CloseDate"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
